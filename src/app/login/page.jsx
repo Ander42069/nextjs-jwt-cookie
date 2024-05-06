@@ -5,9 +5,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 function Home() {
+  // Object to store the user's credentials (email and password)
   const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
+    numero_control: "",
   });
   const router = useRouter();
 
@@ -24,22 +24,12 @@ function Home() {
     <div>
       <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          placeholder="email"
+          type="text"
+          placeholder="numero_control"
           onChange={(e) =>
             setCredentials({
               ...credentials,
-              email: e.target.value,
-            })
-          }
-        />
-        <input
-          type="password"
-          placeholder="password"
-          onChange={(e) =>
-            setCredentials({
-              ...credentials,
-              password: e.target.value,
+              numero_control: e.target.value,
             })
           }
         />

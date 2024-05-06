@@ -2,15 +2,15 @@ import { sign } from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
 export async function POST(request) {
-  const { email, password } = await request.json();
+  const { numero_control } = await request.json();
 
-  if (email === "admin@local.local" && password === "admin") {
+  if (numero_control === "20550360") {
     // expire in 30 days
     const token = sign(
       {
         exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
-        email,
-        username: "fazt",
+        numero_control,
+        username: "edgar anderson",
       },
       "secret"
     );

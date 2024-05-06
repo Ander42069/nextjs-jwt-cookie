@@ -5,9 +5,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 function Dashboard() {
+  // Object to store the user's information (numero_control and username)
   const [user, setUser] = useState({
-    email: "",
-    username: "",
+    numero_control: "",
   });
   const router = useRouter();
 
